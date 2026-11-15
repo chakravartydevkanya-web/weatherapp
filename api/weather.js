@@ -1,16 +1,16 @@
-const NOT_FOUND_MESSAGE = "We couldn't find that city. Please check the spelling and try again.";
-const UNAVAILABLE_MESSAGE = "The weather service is unavailable right now. Please try again later.";
+const NOT_FOUND = "We couldn't find that city. Please check the spelling and try again.";
+const UNAVAILABLE = "The weather service is unavailable right now. Please try again later.";
 
 module.exports = async function handler(req, res) {
-  const city = String((req.query && req.query.city) || "").trim();
+  const city = String(req.query.city || "").trim();
 
   if (!city) {
-    return res.status(404).json({ error: NOT_FOUND_MESSAGE });
+    return res.status(404).json({ message: NOT_FOUND });
   }
 
   const key = process.env.WEATHER_API_KEY;
   if (!key) {
-    return res.status(503).json({ error: UNAVAILABLE_MESSAGE });
+    return res.status(503).json({ message: UNAVAILABLE });
   }
 
   try {
@@ -23,15 +23,12 @@ module.exports = async function handler(req, res) {
     const response = await fetch(url);
     const data = await response.json();
 
-    if (data && data.error) {
-      if (data.error.code === 1006) {
-        return res.status(404).json({ error: NOT_FOUND_MESSAGE });
-      }
-      return res.status(503).json({ error: UNAVAILABLE_MESSAGE });
+    if (data.error && data.error.code === 1006) {
+      return res.status(404).json({ message: NOT_FOUND });
     }
 
-    if (!response.ok || !data.location || !data.current) {
-      return res.status(503).json({ error: UNAVAILABLE_MESSAGE });
+    if (!response.ok || data.error || !data.location || !data.current) {
+      return res.status(503).json({ message: UNAVAILABLE });
     }
 
     let icon = data.current.condition.icon;
@@ -48,10 +45,10 @@ module.exports = async function handler(req, res) {
       temperatureC: data.current.temp_c,
       feelsLikeC: data.current.feelslike_c,
       humidity: data.current.humidity,
-      windSpeedKph: data.current.wind_kph,
+      windKph: data.current.wind_kph,
       windDirection: data.current.wind_dir,
     });
   } catch (error) {
-    return res.status(503).json({ error: UNAVAILABLE_MESSAGE });
+    return res.status(503).json({ message: UNAVAILABLE });
   }
 };

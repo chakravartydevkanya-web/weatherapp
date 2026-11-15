@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup: Pop Tiles</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:16px;background:#eef3f8;color:#1b2a3a;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.page-head h1{margin:0 0 4px;font-size:1.5rem}
+.page-head p{margin:0;color:#4a5b6c}
+.state{margin:28px 0}
+.state h2{font-size:1.1rem;margin:0 0 10px}
+.frames{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start;overflow-x:auto;padding:4px 4px 14px}
+.cap{font-size:.8rem;color:#4a5b6c;margin:0 0 6px}
+.frame{flex:none;overflow:hidden;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+.laptop{width:820px;border-radius:12px;border:1px solid #c5ced8}
+.phone{width:360px;border:8px solid #1b2a3a;border-radius:34px}
+.bar{height:28px;background:#dde3ea;display:flex;gap:6px;align-items:center;padding:0 12px}
+.bar i{width:10px;height:10px;border-radius:50%;background:#9aa7b4;display:block}
+.screen{container-type:inline-size;position:relative;overflow:hidden;min-height:540px;padding:28px 16px;display:flex;justify-content:center}
+.phone .screen{min-height:600px}
+.app{position:relative;z-index:1;width:100%;max-width:640px;text-align:center}
+.title{margin:8px 0 6px;font-size:2rem;line-height:1.1}
+.sub{margin:0 0 22px}
+.search{display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
+.search input{width:100%;font:inherit;padding:14px 18px;border:0;outline:0}
+.search button{font:inherit;padding:14px 26px;border:0;cursor:pointer}
+.status{margin:10px 0;font-size:1.1rem;font-weight:600}
+.big-emoji{font-size:4.2rem;line-height:1}
+.city{margin:0;font-size:1.5rem}
+.time{margin:4px 0 8px;opacity:.85}
+.temp{font-size:4.5rem;font-weight:800;line-height:1;margin:6px 0}
+.desc{font-size:1.2rem;margin:0 0 18px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{padding:14px 10px}
+.tile.wide{grid-column:span 2}
+.tile .ic{font-size:1.6rem;display:block}
+.tile .lb{display:block;font-size:.85rem;opacity:.85;margin-top:2px}
+.tile .vl{display:block;font-size:1.3rem;font-weight:700;margin-top:2px}
+.deco{position:absolute;z-index:0;line-height:1;pointer-events:none}
+@container (max-width:599px){.app{padding-top:50px}.deco.mid{display:none}}
+@container (min-width:600px){
+  .title{font-size:3.2rem}
+  .search{flex-direction:row}
+  .search input{flex:1}
+  .tiles{grid-template-columns:repeat(3,1fr)}
+  .tile.wide{grid-column:auto}
+  .temp{font-size:6rem}
+  .city{font-size:2rem}
+}
+
+.screen{font-family:Verdana,"Segoe UI",system-ui,sans-serif;color:#14213d}
+.bg-start{background:#7ad7ff}
+.bg-result{background:linear-gradient(#5b7fd6,#9bbcf0)}
+.bg-notfound{background:#b9c7e6}
+.title{font-size:2.3rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#14213d;text-shadow:3px 3px 0 #fff}
+.sub{font-weight:700}
+.search input{border-radius:14px;background:#fff;border:3px solid #14213d;box-shadow:4px 4px 0 #14213d;font-weight:700}
+.search button{border-radius:14px;background:#ffd23f;color:#14213d;font-weight:900;border:3px solid #14213d;box-shadow:4px 4px 0 #14213d;text-transform:uppercase}
+.status{display:inline-block;background:#fff;border:3px solid #14213d;border-radius:14px;padding:8px 20px;box-shadow:4px 4px 0 #14213d;font-weight:800}
+.card{background:#fff;border:3px solid #14213d;border-radius:18px;padding:18px 14px;box-shadow:6px 6px 0 #14213d;margin-bottom:6px}
+.tile{border:3px solid #14213d;border-radius:16px;box-shadow:4px 4px 0 #14213d;font-weight:700}
+.t1{background:#ffd23f}.t2{background:#3ec7c2}.t3{background:#b28dff}
+.nf{background:#fff;border:3px solid #14213d;border-radius:18px;padding:26px 18px;box-shadow:6px 6px 0 #14213d}
+.nf .big-emoji{margin-bottom:8px}
+@container (min-width:600px){.title{font-size:3.6rem}}
+</style>
+</head>
+<body>
+<header class="page-head"><h1>Mockup: Pop Tiles</h1><p>Chunky playful letters, thick outlines, a big yellow button and bright coloured tiles. The result shows a rainy day. Design only, nothing works yet.</p></header>
+<section class="state"><h2>1. Before searching</h2><div class="frames"><div><p class="cap">Laptop size</p><div class="frame laptop"><div class="bar"><i></i><i></i><i></i></div><div class="screen bg-start"><span class="deco" style="top:12px;left:14px;font-size:2.6rem">⭐</span><span class="deco" style="top:20px;right:16px;font-size:3rem">🌈</span><div class="app"><h1 class="title">Weather App</h1><p class="sub">Pick a city. Get the sky!</p><div class="search"><input type="text" placeholder="Type a city name" value="" readonly aria-label="City name"><button type="button">Search</button></div></div></div></div></div><div><p class="cap">Phone size</p><div class="frame phone"><div class="screen bg-start"><span class="deco" style="top:12px;left:14px;font-size:2.6rem">⭐</span><span class="deco" style="top:20px;right:16px;font-size:3rem">🌈</span><div class="app"><h1 class="title">Weather App</h1><p class="sub">Pick a city. Get the sky!</p><div class="search"><input type="text" placeholder="Type a city name" value="" readonly aria-label="City name"><button type="button">Search</button></div></div></div></div></div></div></section>
+<section class="state"><h2>2. Loading</h2><div class="frames"><div><p class="cap">Laptop size</p><div class="frame laptop"><div class="bar"><i></i><i></i><i></i></div><div class="screen bg-start"><span class="deco" style="top:12px;left:14px;font-size:2.6rem">⭐</span><span class="deco" style="top:20px;right:16px;font-size:3rem">🌈</span><div class="app"><h1 class="title">Weather App</h1><p class="sub">Pick a city. Get the sky!</p><div class="search"><input type="text" placeholder="Type a city name" value="" readonly aria-label="City name"><button type="button">Search</button></div><p class="status">Loading...</p></div></div></div></div><div><p class="cap">Phone size</p><div class="frame phone"><div class="screen bg-start"><span class="deco" style="top:12px;left:14px;font-size:2.6rem">⭐</span><span class="deco" style="top:20px;right:16px;font-size:3rem">🌈</span><div class="app"><h1 class="title">Weather App</h1><p class="sub">Pick a city. Get the sky!</p><div class="search"><input type="text" placeholder="Type a city name" value="" readonly aria-label="City name"><button type="button">Search</button></div><p class="status">Loading...</p></div></div></div></div></div></section>
+<section class="state"><h2>3. Weather result</h2><div class="frames"><div><p class="cap">Laptop size</p><div class="frame laptop"><div class="bar"><i></i><i></i><i></i></div><div class="screen bg-result"><span class="deco" style="top:14px;left:14px;font-size:2.6rem">💧</span><span class="deco" style="top:20px;right:16px;font-size:3rem">☔</span><div class="app"><h1 class="title">Weather App</h1><p class="sub">Pick a city. Get the sky!</p><div class="search"><input type="text" placeholder="Type a city name" value="" readonly aria-label="City name"><button type="button">Search</button></div><div class="card"><h2 class="city">London, United Kingdom</h2><p class="time">Tuesday, 15 November · 14:30</p><div class="big-emoji" role="img" aria-label="Light rain">🌧️</div><div class="temp">24°C</div><p class="desc">Light rain</p><div class="tiles"><div class="tile t1"><span class="ic">🌡️</span><span class="lb">Feels like</span><span class="vl">26°C</span></div><div class="tile t2"><span class="ic">💧</span><span class="lb">Humidity</span><span class="vl">48%</span></div><div class="tile wide t3"><span class="ic">💨</span><span class="lb">Wind</span><span class="vl">14 km/h NW</span></div></div></div></div></div></div></div><div><p class="cap">Phone size</p><div class="frame phone"><div class="screen bg-result"><span class="deco" style="top:14px;left:14px;font-size:2.6rem">💧</span><span class="deco" style="top:20px;right:16px;font-size:3rem">☔</span><div class="app"><h1 class="title">Weather App</h1><p class="sub">Pick a city. Get the sky!</p><div class="search"><input type="text" placeholder="Type a city name" value="" readonly aria-label="City name"><button type="button">Search</button></div><div class="card"><h2 class="city">London, United Kingdom</h2><p class="time">Tuesday, 15 November · 14:30</p><div class="big-emoji" role="img" aria-label="Light rain">🌧️</div><div class="temp">24°C</div><p class="desc">Light rain</p><div class="tiles"><div class="tile t1"><span class="ic">🌡️</span><span class="lb">Feels like</span><span class="vl">26°C</span></div><div class="tile t2"><span class="ic">💧</span><span class="lb">Humidity</span><span class="vl">48%</span></div><div class="tile wide t3"><span class="ic">💨</span><span class="lb">Wind</span><span class="vl">14 km/h NW</span></div></div></div></div></div></div></div></div></section>
+<section class="state"><h2>4. City not found</h2><div class="frames"><div><p class="cap">Laptop size</p><div class="frame laptop"><div class="bar"><i></i><i></i><i></i></div><div class="screen bg-notfound"><span class="deco" style="top:14px;left:14px;font-size:2.6rem">❓</span><span class="deco" style="top:20px;right:16px;font-size:2.6rem">⭐</span><div class="app"><h1 class="title">Weather App</h1><p class="sub">Pick a city. Get the sky!</p><div class="search"><input type="text" placeholder="Type a city name" value="" readonly aria-label="City name"><button type="button">Search</button></div><div class="nf"><div class="big-emoji">🔍</div><h2 class="city">Hmm, we can't find that city</h2><p>Please check the spelling and try again.</p></div></div></div></div></div><div><p class="cap">Phone size</p><div class="frame phone"><div class="screen bg-notfound"><span class="deco" style="top:14px;left:14px;font-size:2.6rem">❓</span><span class="deco" style="top:20px;right:16px;font-size:2.6rem">⭐</span><div class="app"><h1 class="title">Weather App</h1><p class="sub">Pick a city. Get the sky!</p><div class="search"><input type="text" placeholder="Type a city name" value="" readonly aria-label="City name"><button type="button">Search</button></div><div class="nf"><div class="big-emoji">🔍</div><h2 class="city">Hmm, we can't find that city</h2><p>Please check the spelling and try again.</p></div></div></div></div></div></div></section>
+</body>
+</html>
